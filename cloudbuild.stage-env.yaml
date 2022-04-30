@@ -3,7 +3,7 @@
 #-----------------------------------------
 steps:
 # Docker Build Image
-  - name: gcr.io/cloud-builders/docker
+  - name: 'gcr.io/cloud-builders/docker'
     id  : BUILD
     args: ['build', '-t', '$SERVICE_IMAGE', '.', '-f', 'Dockerfile']
 
