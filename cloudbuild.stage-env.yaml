@@ -8,7 +8,7 @@ steps:
     args: ['build', '-t', '$_SERVICE_IMAGE', '.', '-f', 'Dockerfile']
 
 substitutions:
-    _SERVICE_IMAGE    : gcr.io/${PROJECT_ID}/${DOCKER_IMAGENAME}
+    _SERVICE_IMAGE    : northamerica-northeast1-docker.pkg.dev/${PROJECT_ID}/${DOCKER_IMAGENAME}
     _DOCKER_REGISTRY  : immune-test-repo
     _DOCKER_IMAGENAME : immune-test-image
     _PROJECT_ID       : mgmt-348822
