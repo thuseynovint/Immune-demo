@@ -1,15 +1,1 @@
-#-----------------------------------------
-# CloudBuild Pipeline for Staging CloudRun
-#-----------------------------------------
-steps:
-# Docker Build Image
-  - name: 'gcr.io/cloud-builders/docker'
-    id  : BUILD
-    args: ['build', '-t', '$_SERVICE_IMAGE', '.', '-f', 'Dockerfile']
 
-substitutions:
-    _SERVICE_IMAGE    : gcr.io/${PROJECT_ID}/${DOCKER_IMAGENAME}
-    _DOCKER_REGISTRY  : immune-test-repo
-    _DOCKER_IMAGENAME : immune-test-image
-    _PROJECT_ID       : mgmt-348822
-    
