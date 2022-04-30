@@ -1,5 +1,5 @@
 #---------------------------------------------------------------------------
-# Dockefile to build Docker Image with Apache WebServer running on Ubuntu
+# Dockefile to build Docker Image
 
 #---------------------------------------------------------------------------
 
