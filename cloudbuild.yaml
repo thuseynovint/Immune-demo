@@ -4,7 +4,9 @@ steps:
 # Docker Build Image
   - name: 'gcr.io/cloud-builders/docker'
     id  : BUILD
-    args: ['build', '-t', '$_SERVICE_IMAGE', '.', '-f', 'APOPharmaImmun/Dockerfile']
+    args: ['build', '-t', '$_SERVICE_IMAGE', '.', '-f', 'Dockerfile']
+
+
 
 #Docker push to Artifact service
 
@@ -25,16 +27,18 @@ steps:
       - --image=$_SERVICE_IMAGE
       - --port=$_PORT
 
-images: # Display the image in the build results - Build Artifacts
+# Display the image in the build results - Build Artifacts
+images:
 - $_SERVICE_IMAGE
+
 
 substitutions:
     _SERVICE_IMAGE    : gcr.io/${PROJECT_ID}/${_DOCKER_REGISTRY}/${_DOCKER_IMAGENAME}:${SHORT_SHA}
     _DOCKER_REGISTRY  : immune-test-repo
-    _DOCKER_IMAGENAME : immune-prod
-    _PROJECT_ID       : mgmt-348822
-    _SERVICE_NAME     : prod-app
-    _PORT             : '80'
+    _DOCKER_IMAGENAME : immune-stage
+    _PROJECT_ID       : mgmt-34882
+    _SERVICE_PROJECT  : stage-348902
     _SERVICE_REGION   : europe-central2
-    _SERVICE_PROJECT  : ceremonial-orb-348902
+    _SERVICE_NAME     : stage-app
+    _PORT             : '80'
 
