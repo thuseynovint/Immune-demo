@@ -7,7 +7,11 @@ steps:
     id  : BUILD
     args: ['build', '-t', '$_SERVICE_IMAGE', '.', '-f', 'Dockerfile']
 
-#Push to Artifact service
+#Docker push to Artifact service
+
+  - name: 'gcr.io/cloud-builders/docker'
+    id  : PUSH
+    args: ['push', '$_SERVICE_IMAGE']
 
 
 
