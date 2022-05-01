@@ -1,4 +1,3 @@
-#-----------------------------------------
 # CloudBuild Pipeline for Staging CloudRun
 #-----------------------------------------
 steps:
@@ -12,9 +11,6 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     id  : PUSH
     args: ['push', '$_SERVICE_IMAGE']
-
-
-
 
 substitutions:
     _SERVICE_IMAGE    : gcr.io/${PROJECT_ID}/${_DOCKER_REGISTRY}/${_DOCKER_IMAGENAME}:${SHORT_SHA}
