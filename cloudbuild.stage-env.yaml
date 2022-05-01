@@ -5,7 +5,7 @@ steps:
 # Docker Build Image
   - name: 'gcr.io/cloud-builders/docker'
     id  : BUILD
-    args: ['build', '-t','.', '-f', 'Dockerfile']
+    args: ['build', '.', '-f', 'Dockerfile']
 
 substitutions:
     _SERVICE_IMAGE    : gcr.io/${_PROJECT_ID}/${_DOCKER_IMAGENAME}
