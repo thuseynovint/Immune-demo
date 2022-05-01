@@ -33,6 +33,7 @@ substitutions:
     _DOCKER_REGISTRY  : immune-test-repo
     _DOCKER_IMAGENAME : immune-prod
     _PROJECT_ID       : mgmt-348822
+    _SERVICE_NAME     : prod-app
     _PORT             : '80'
     _SERVICE_REGION   : europe-central2
     _SERVICE_PROJEC   : ceremonial-orb-348902
