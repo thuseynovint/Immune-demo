@@ -36,5 +36,5 @@ substitutions:
     _SERVICE_NAME     : prod-app
     _PORT             : '80'
     _SERVICE_REGION   : europe-central2
-    _SERVICE_PROJEC   : ceremonial-orb-348902
+    _SERVICE_PROJECT  : ceremonial-orb-348902
 
