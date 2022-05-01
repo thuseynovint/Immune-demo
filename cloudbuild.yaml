@@ -12,9 +12,26 @@ steps:
     id  : PUSH
     args: ['push', '$_SERVICE_IMAGE']
 
+# Docker Deploy image to Cloud Run
+  - name: gcr.io/cloud-builders/gcloud
+    id  : DEPLOY
+    args:
+      - run
+      - services
+      - update
+      - $_SERVICE_NAME
+      - --project=$_SERVICE_PROJECT
+      - --region=$_SERVICE_REGION
+      - --image=$_SERVICE_IMAGE
+
+images: # Display the image in the build results - Build Artifacts
+- $_SERVICE_IMAGE
+
 substitutions:
     _SERVICE_IMAGE    : gcr.io/${PROJECT_ID}/${_DOCKER_REGISTRY}/${_DOCKER_IMAGENAME}:${SHORT_SHA}
     _DOCKER_REGISTRY  : immune-test-repo
     _DOCKER_IMAGENAME : immune-test-image
     _PROJECT_ID       : mgmt-348822
+    _SERVICE_REGION   : europe-central2
+    _SERVICE_PROJEC   : teymur-huseynov
 
