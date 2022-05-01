@@ -7,8 +7,13 @@ steps:
     id  : BUILD
     args: ['build', '-t', '$_SERVICE_IMAGE', '.', '-f', 'Dockerfile']
 
+#Push to Artifact service
+
+
+
+
 substitutions:
-    _SERVICE_IMAGE    : gcr.io/${_PROJECT_ID}/${_DOCKER_IMAGENAME}
+    _SERVICE_IMAGE    : gcr.io/${PROJECT_ID}/${_DOCKER_REGISTRY}/${_DOCKER_IMAGENAME}:${SHORT_SHA}
     _DOCKER_REGISTRY  : immune-test-repo
     _DOCKER_IMAGENAME : immune-test-image
     _PROJECT_ID       : mgmt-348822
