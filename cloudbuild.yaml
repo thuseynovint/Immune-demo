@@ -31,9 +31,9 @@ images: # Display the image in the build results - Build Artifacts
 substitutions:
     _SERVICE_IMAGE    : gcr.io/${PROJECT_ID}/${_DOCKER_REGISTRY}/${_DOCKER_IMAGENAME}:${SHORT_SHA}
     _DOCKER_REGISTRY  : immune-test-repo
-    _DOCKER_IMAGENAME : immune-test-image
+    _DOCKER_IMAGENAME : immune-prod
     _PROJECT_ID       : mgmt-348822
-     PORT             : 8080
+    _PORT             : '80'
     _SERVICE_REGION   : europe-central2
-    _SERVICE_PROJEC   : teymur-huseynov
+    _SERVICE_PROJEC   : ceremonial-orb-348902
 
