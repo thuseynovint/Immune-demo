@@ -5,7 +5,7 @@ steps:
 # Docker Build Image
   - name: 'gcr.io/cloud-builders/docker'
     id  : BUILD
-    args: ['build', '-t', '$_SERVICE_IMAGE', '.', '-f', 'Dockerfile']
+    args: ['build', '-t','.', '-f', 'Dockerfile']
 
 substitutions:
     _SERVICE_IMAGE    : gcr.io/${_PROJECT_ID}/${_DOCKER_IMAGENAME}
@@ -13,3 +13,4 @@ substitutions:
     _DOCKER_IMAGENAME : immune-test-image
     _PROJECT_ID       : mgmt-348822
     
+#    args: ['build', '-t', '$_SERVICE_IMAGE', '.', '-f', 'Dockerfile']
