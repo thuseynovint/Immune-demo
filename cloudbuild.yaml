@@ -40,5 +40,5 @@ substitutions:
     _SERVICE_PROJECT  : stage-348902
     _SERVICE_REGION   : europe-central2
     _SERVICE_NAME     : stage-app
-    _PORT             : '80'
+    _PORT             : '8080'
 
