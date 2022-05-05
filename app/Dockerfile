@@ -6,8 +6,8 @@ RUN go build main.go
 #RUN rm main.go
 #RUN go.mod
 
-FROM gcr.io/distroless/static as runner
-USER nonroot:nonroot
+FROM golang:1.18-alpine as runner
+
 EXPOSE 8080
 COPY --from=builder /app .
 CMD [ "./main" ]
