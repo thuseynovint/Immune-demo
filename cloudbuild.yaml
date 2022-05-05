@@ -35,10 +35,10 @@ images:
 substitutions:
     _SERVICE_IMAGE    : gcr.io/${PROJECT_ID}/${_DOCKER_REGISTRY}/${_DOCKER_IMAGENAME}:${SHORT_SHA}
     _DOCKER_REGISTRY  : immune-test-repo
-    _DOCKER_IMAGENAME : immune-stage
+    _DOCKER_IMAGENAME : immune-prod
     _PROJECT_ID       : mgmt-34882
-    _SERVICE_PROJECT  : stage-348902
+    _SERVICE_PROJECT  : ceremonial-orb-348902
     _SERVICE_REGION   : europe-central2
-    _SERVICE_NAME     : stage-app
+    _SERVICE_NAME     : prod-app
     _PORT             : '8080'
 
