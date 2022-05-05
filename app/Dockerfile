@@ -10,7 +10,7 @@ FROM gcr.io/distroless/static:nonroot as runner
 
 
 ENV PORT 8080
-#ENV HOST 0.0.0.0
+ENV HOST 0.0.0.0
 EXPOSE 8080
 COPY --from=builder /app .
 CMD [ "./main" ]
