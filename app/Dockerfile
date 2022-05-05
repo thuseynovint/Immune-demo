@@ -2,6 +2,7 @@ FROM golang:1.18-alpine AS builder
 WORKDIR /app
 COPY . /app
 RUN go mod init app
+RUN ls
 
 RUN go build main.go
 RUN rm /app/main.go 
