@@ -4,7 +4,7 @@ COPY /app /app
 RUN go mod init app
 RUN go build main.go
 RUN rm main.go
-RUN go.mod
+RUN rm go.mod
 
 FROM golang:1.18-alpine as runner
 
