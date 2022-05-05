@@ -11,9 +11,7 @@ FROM gcr.io/distroless/static:nonroot as runner
 USER nonroot
 ENV PORT 8080
 ENV HOST 0.0.0.0
-RUN ["/bin/bash", "-c", "echo I am now using bash!"]
-RUN whoami
+RUN dnsjs
 EXPOSE 8080
-
 COPY --from=builder /app .
-CMD [ "./main" ]
+ENTRYPOINT  [ "./main" ]
