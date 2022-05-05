@@ -4,7 +4,7 @@ steps:
 # Docker Build Image
   - name: 'gcr.io/cloud-builders/docker'
     id  : BUILD
-    args: ['build', '-t', '$_SERVICE_IMAGE', '.', '-f', 'APOPharmaImmun/Dockerfile']
+    args: ['build', '-t', '$_SERVICE_IMAGE', '.', '-f', 'app/Dockerfile']
 
 
 
