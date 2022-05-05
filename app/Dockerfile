@@ -9,5 +9,5 @@ RUN go.mod
 FROM gcr.io/distroless/static:nonroot as runner
 
 EXPOSE 8080
-COPY --from=builder /app 
+COPY --from=builder /app .
 CMD [ "./main" ]
