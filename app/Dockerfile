@@ -1,15 +1,13 @@
 FROM golang:1.18-alpine AS builder
 WORKDIR /app
-
-COPY . .
-RUN ls
+COPY /app .
 RUN go mod init app
-RUN ls
 RUN go build main.go
-RUN ls
+RUN rm main.go
+#RUN go.mod
 
-#FROM gcr.io/distroless/static:nonroot as runner
-FROM golang:1.18-alpine AS runner
+FROM gcr.io/distroless/static as runner
+USER nonroot:nonroot
 EXPOSE 8080
 WORKDIR /app
 COPY --from=builder /app .
