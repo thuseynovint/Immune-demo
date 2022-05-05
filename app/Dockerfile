@@ -1,17 +1,17 @@
+# 1.`builder` step 
+# ---
 FROM golang:1.18-alpine AS builder
-WORKDIR /app
-COPY /app /app
+WORKDIR /go/src/app
+COPY app/main.go app/static.json  ./
 RUN go mod init app
-RUN go build main.go
-RUN rm main.go
-RUN rm go.mod
-
+RUN CGO_ENABLED=0 go build -o /go/bin/app
+# ---
+# 2.copy process from the previous step to the `runner`.
+# ---
 FROM gcr.io/distroless/static:nonroot as runner
-
-#USER nonroot
-#ENV PORT 8080
-#ENV HOST 0.0.0.0
-
+COPY --from=builder /go/bin/app /
+# ---
+# 3. expose the port 8080 and  appropriate entrypoint.
+# ---
 EXPOSE 8080
-COPY --from=builder /app .
-ENTRYPOINT  ["./main"]
+ENTRYPOINT  ["/app"]
