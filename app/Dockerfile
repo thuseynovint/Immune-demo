@@ -8,11 +8,10 @@ RUN rm go.mod
 
 FROM gcr.io/distroless/static:nonroot as runner
 
-USER nonroot
-ENV PORT 8080
-ENV HOST 0.0.0.0
+#USER nonroot
+#ENV PORT 8080
+#ENV HOST 0.0.0.0
 
 EXPOSE 8080
 COPY --from=builder /app .
-
-ENTRYPOINT  [ "main" ]
+ENTRYPOINT  ["./main"]
