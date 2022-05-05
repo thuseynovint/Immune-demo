@@ -4,10 +4,10 @@ COPY /app /app
 RUN go mod init app
 RUN go build main.go
 RUN rm main.go
-RUN rm go.mod
+RUN go.mod
 
-FROM golang:1.18-alpine as runner
+FROM gcr.io/distroless/static as runner
 
 EXPOSE 8080
-COPY --from=builder /app .
+COPY --from=builder /app 
 CMD [ "./main" ]
