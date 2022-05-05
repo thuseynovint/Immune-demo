@@ -9,8 +9,7 @@ RUN go build main.go
 RUN rm /app/main.go 
 FROM gcr.io/distroless/static:nonroot as runner
 
-COPY --from=builder /app .
-RUN pwd
-RUN ls 
+COPY --from=builder /app /app
+
 EXPOSE 8080
 CMD [ "./main"]
