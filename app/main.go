@@ -12,6 +12,7 @@ import (
  * file into the compiled binary
  */
 
+//go:embed static.json
 var staticFs embed.FS
 
 const port = 8080
